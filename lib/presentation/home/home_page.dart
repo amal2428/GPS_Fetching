@@ -20,7 +20,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text("dio  model bloc"),
+          title: const Text("gps fetching"),
         ),
         body: Center(
           child: BlocBuilder<ResponseBlocBloc, ResponseBlocState>(
@@ -28,7 +28,8 @@ class MyHomePage extends StatelessWidget {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(state.weather ?? "no data"),
+                  Text(state.currentLatitude.toString() ?? "no data"),
+                  Text(state.currentLongitude.toString() ?? "no data"),
                   const SizedBox(
                     height: 50,
                   ),

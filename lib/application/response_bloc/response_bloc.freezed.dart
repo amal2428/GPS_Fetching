@@ -166,21 +166,28 @@ abstract class FetchDataEvent implements ResponseBlocEvent {
 
 /// @nodoc
 mixin _$ResponseBlocState {
-  String? get weather => throw _privateConstructorUsedError;
+  double? get currentLatitude => throw _privateConstructorUsedError;
+  double? get currentLongitude => throw _privateConstructorUsedError;
   String? get errorMsg => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? weather, String? errorMsg) initial,
+    required TResult Function(
+            double? currentLatitude, double? currentLongitude, String? errorMsg)
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? weather, String? errorMsg)? initial,
+    TResult? Function(double? currentLatitude, double? currentLongitude,
+            String? errorMsg)?
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? weather, String? errorMsg)? initial,
+    TResult Function(double? currentLatitude, double? currentLongitude,
+            String? errorMsg)?
+        initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -212,7 +219,8 @@ abstract class $ResponseBlocStateCopyWith<$Res> {
           ResponseBlocState value, $Res Function(ResponseBlocState) then) =
       _$ResponseBlocStateCopyWithImpl<$Res, ResponseBlocState>;
   @useResult
-  $Res call({String? weather, String? errorMsg});
+  $Res call(
+      {double? currentLatitude, double? currentLongitude, String? errorMsg});
 }
 
 /// @nodoc
@@ -228,14 +236,19 @@ class _$ResponseBlocStateCopyWithImpl<$Res, $Val extends ResponseBlocState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weather = freezed,
+    Object? currentLatitude = freezed,
+    Object? currentLongitude = freezed,
     Object? errorMsg = freezed,
   }) {
     return _then(_value.copyWith(
-      weather: freezed == weather
-          ? _value.weather
-          : weather // ignore: cast_nullable_to_non_nullable
-              as String?,
+      currentLatitude: freezed == currentLatitude
+          ? _value.currentLatitude
+          : currentLatitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      currentLongitude: freezed == currentLongitude
+          ? _value.currentLongitude
+          : currentLongitude // ignore: cast_nullable_to_non_nullable
+              as double?,
       errorMsg: freezed == errorMsg
           ? _value.errorMsg
           : errorMsg // ignore: cast_nullable_to_non_nullable
@@ -252,7 +265,8 @@ abstract class _$$_InitialCopyWith<$Res>
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? weather, String? errorMsg});
+  $Res call(
+      {double? currentLatitude, double? currentLongitude, String? errorMsg});
 }
 
 /// @nodoc
@@ -265,14 +279,19 @@ class __$$_InitialCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weather = freezed,
+    Object? currentLatitude = freezed,
+    Object? currentLongitude = freezed,
     Object? errorMsg = freezed,
   }) {
     return _then(_$_Initial(
-      weather: freezed == weather
-          ? _value.weather
-          : weather // ignore: cast_nullable_to_non_nullable
-              as String?,
+      currentLatitude: freezed == currentLatitude
+          ? _value.currentLatitude
+          : currentLatitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      currentLongitude: freezed == currentLongitude
+          ? _value.currentLongitude
+          : currentLongitude // ignore: cast_nullable_to_non_nullable
+              as double?,
       errorMsg: freezed == errorMsg
           ? _value.errorMsg
           : errorMsg // ignore: cast_nullable_to_non_nullable
@@ -284,16 +303,19 @@ class __$$_InitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({this.weather, this.errorMsg});
+  const _$_Initial(
+      {this.currentLatitude, this.currentLongitude, this.errorMsg});
 
   @override
-  final String? weather;
+  final double? currentLatitude;
+  @override
+  final double? currentLongitude;
   @override
   final String? errorMsg;
 
   @override
   String toString() {
-    return 'ResponseBlocState.initial(weather: $weather, errorMsg: $errorMsg)';
+    return 'ResponseBlocState.initial(currentLatitude: $currentLatitude, currentLongitude: $currentLongitude, errorMsg: $errorMsg)';
   }
 
   @override
@@ -301,13 +323,17 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            (identical(other.weather, weather) || other.weather == weather) &&
+            (identical(other.currentLatitude, currentLatitude) ||
+                other.currentLatitude == currentLatitude) &&
+            (identical(other.currentLongitude, currentLongitude) ||
+                other.currentLongitude == currentLongitude) &&
             (identical(other.errorMsg, errorMsg) ||
                 other.errorMsg == errorMsg));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, weather, errorMsg);
+  int get hashCode =>
+      Object.hash(runtimeType, currentLatitude, currentLongitude, errorMsg);
 
   @JsonKey(ignore: true)
   @override
@@ -318,27 +344,33 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? weather, String? errorMsg) initial,
+    required TResult Function(
+            double? currentLatitude, double? currentLongitude, String? errorMsg)
+        initial,
   }) {
-    return initial(weather, errorMsg);
+    return initial(currentLatitude, currentLongitude, errorMsg);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? weather, String? errorMsg)? initial,
+    TResult? Function(double? currentLatitude, double? currentLongitude,
+            String? errorMsg)?
+        initial,
   }) {
-    return initial?.call(weather, errorMsg);
+    return initial?.call(currentLatitude, currentLongitude, errorMsg);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? weather, String? errorMsg)? initial,
+    TResult Function(double? currentLatitude, double? currentLongitude,
+            String? errorMsg)?
+        initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(weather, errorMsg);
+      return initial(currentLatitude, currentLongitude, errorMsg);
     }
     return orElse();
   }
@@ -373,11 +405,15 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements ResponseBlocState {
-  const factory _Initial({final String? weather, final String? errorMsg}) =
-      _$_Initial;
+  const factory _Initial(
+      {final double? currentLatitude,
+      final double? currentLongitude,
+      final String? errorMsg}) = _$_Initial;
 
   @override
-  String? get weather;
+  double? get currentLatitude;
+  @override
+  double? get currentLongitude;
   @override
   String? get errorMsg;
   @override
